@@ -1,6 +1,8 @@
 import Foundation
 
 extension String {
+    var length:Int {get { return count(self) }}
+
     func substring(start:Int, end:Int) -> String {
         if end >= start {
             return ""
@@ -26,6 +28,10 @@ extension String {
         return out
     }
     
+    func split(token:String) -> Array<String> {
+        return split(self) {$0 == token}
+    }
+
     mutating func trim() {
         self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
     }
@@ -40,5 +46,25 @@ extension String {
     
     subscript(i:Int) -> Character? {
         return self.charAt(i)
+    }
+
+    func link(url:String) -> String {
+        return "<a href=\"\(url)\">\(self)</a>"
+    }
+
+    func toUpperCase() -> String {
+        return self.uppercaseString
+    }
+    
+    func toLowerCase() -> String {
+        return self.lowercaseString
+    }
+    
+    func toLocaleUpperCase() -> String {
+        return self.uppercaseStringWithLocale(NSLocale.autoupdatingCurrentLocale())
+    }
+    
+    func toLocaleLowerCase() -> String {
+        return self.lowercaseStringWithLocale(NSLocale.autoupdatingCurrentLocale())
     }
 }

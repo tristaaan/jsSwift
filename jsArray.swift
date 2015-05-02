@@ -1,4 +1,6 @@
 extension Array {
+    var length:Int {get { return self.count }}
+
     func every(fn: (T)->Bool) -> Bool {
         var out = true
         for i in self {
@@ -16,11 +18,7 @@ extension Array {
     }
     
     func concat(arr:Array<T>) -> Array<T> {
-        var out:Array<T> = self
-        for i in arr {
-            out.append(i)
-        }
-        return out
+        return self + arr
     }
     
     mutating func push(el:T) -> Int {
@@ -32,9 +30,9 @@ extension Array {
         if self.count == 0 {
             return nil
         }
-        let ret = self[self.count-1]
+        let out = self[self.count-1]
         self.removeLast()
-        return ret
+        return out
     }
     
     mutating func unshift(el:T) -> Int {
@@ -46,8 +44,8 @@ extension Array {
         if self.count == 0 {
             return nil
         }
-        let ret = self[0]
+        let out = self[0]
         self.removeAtIndex(0)
-        return ret
+        return out
     }
 }
