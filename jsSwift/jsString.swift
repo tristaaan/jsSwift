@@ -29,7 +29,7 @@ extension String {
     }
     
     func split(token:String) -> Array<String> {
-        return split(self) {$0 == token}
+        return self.componentsSeparatedByString(token)
     }
 
     mutating func trim() {
