@@ -9,15 +9,27 @@
 import Foundation
 
 extension NSDate {
-    func now() -> Double {
-        return NSTimeIntervalSince1970
+    
+    convenience init(year:Int=0, month:Int=0, day:Int=0, hour:Int=0, minute:Int=0, seconds:Int=0){
+        let comp:NSDateComponents = NSDateComponents()
+        comp.year  = year
+        comp.month = month
+        comp.day   = day
+        comp.hour  = hour
+        comp.minute = minute
+        comp.second = seconds
+        
+        let cal:NSCalendar = NSCalendar.currentCalendar();
+        self.init(timeInterval:0, sinceDate:cal.dateFromComponents(comp)!)
     }
     
     internal func localeCal() -> NSCalendar{
-        let locale:NSLocale = NSLocale.autoupdatingCurrentLocale()
-        let cal:NSCalendar = NSCalendar.init();
-        cal.locale = locale
+        let cal:NSCalendar = NSCalendar.currentCalendar();
         return cal
+    }
+    
+    func now() -> Double {
+        return NSTimeIntervalSince1970
     }
     
     func getSeconds() -> Int {
