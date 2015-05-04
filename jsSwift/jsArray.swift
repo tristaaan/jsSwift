@@ -17,6 +17,10 @@ extension Array {
         return out
     }
     
+    func toString() -> String {
+        return self.description
+    }
+    
     func concat(arr:Array<T>) -> Array<T> {
         return self + arr
     }
