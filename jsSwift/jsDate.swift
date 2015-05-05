@@ -10,7 +10,7 @@ import Foundation
 
 extension NSDate {
     
-    convenience init(year:Int=0, month:Int=0, day:Int=0, hour:Int=0, minute:Int=0, seconds:Int=0){
+    convenience init(year:Int=0, month:Int=0, day:Int=0, hour:Int=0, minute:Int=0, seconds:Int=0) {
         let comp:NSDateComponents = NSDateComponents()
         comp.year  = year
         comp.month = month
@@ -23,7 +23,7 @@ extension NSDate {
         self.init(timeInterval:0, sinceDate:cal.dateFromComponents(comp)!)
     }
     
-    internal func localeCal() -> NSCalendar{
+    internal func localeCal() -> NSCalendar {
         let cal:NSCalendar = NSCalendar.currentCalendar();
         return cal
     }
@@ -47,9 +47,14 @@ extension NSDate {
         return comp.hour
     }
     
-    func getDay() -> Int {
+    func getDate() -> Int {
         let comp:NSDateComponents = localeCal().components(NSCalendarUnit.CalendarUnitDay, fromDate: self)
         return comp.day
+    }
+    
+    func getDay() -> Int {
+        let comp:NSDateComponents = localeCal().components(NSCalendarUnit.CalendarUnitWeekday, fromDate: self)
+        return comp.weekday
     }
     
     func getMonth() -> Int {
@@ -60,5 +65,9 @@ extension NSDate {
     func getYear() -> Int {
         let comp:NSDateComponents = localeCal().components(NSCalendarUnit.CalendarUnitYear, fromDate: self)
         return comp.year
+    }
+    
+    func toString() -> String {
+        return self.description
     }
 }

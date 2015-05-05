@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 thesixsides. All rights reserved.
 //
 
+import UIKit
 import XCTest
 
 class jsStringTests: XCTestCase {

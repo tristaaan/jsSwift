@@ -163,8 +163,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B2D82E71AF549F500F4492A /* Build configuration list for PBXNativeTarget "jsSwiftTests" */;
 			buildPhases = (
-				3B2D82D51AF549F500F4492A /* Sources */,
 				3B2D82D61AF549F500F4492A /* Frameworks */,
+				3B2D82D51AF549F500F4492A /* Sources */,
 				3B2D82D71AF549F500F4492A /* Resources */,
 			);
 			buildRules = (
