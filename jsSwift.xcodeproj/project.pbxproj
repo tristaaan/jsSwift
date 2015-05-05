@@ -16,6 +16,7 @@
 		3B2D82F71AF54FD200F4492A /* jsString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D82EF1AF54A2800F4492A /* jsString.swift */; };
 		3B2D82F91AF5501100F4492A /* jsStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D82F81AF5501100F4492A /* jsStringTests.swift */; };
 		3B2D82FB1AF7D12100F4492A /* jsDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D82FA1AF7D12100F4492A /* jsDictionary.swift */; };
+		3BCC976A1AF932FE000DADA5 /* jsBoolean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCC97691AF932FE000DADA5 /* jsBoolean.swift */; };
 		3BECC5A51AF7D97900C4B795 /* jsDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BECC5A41AF7D97900C4B795 /* jsDate.swift */; };
 		3BECC5A61AF7DEE200C4B795 /* jsDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D82FA1AF7D12100F4492A /* jsDictionary.swift */; };
 		3BECC5A71AF7DEE400C4B795 /* jsDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BECC5A41AF7D97900C4B795 /* jsDate.swift */; };
@@ -44,6 +45,7 @@
 		3B2D82EF1AF54A2800F4492A /* jsString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsString.swift; sourceTree = "<group>"; };
 		3B2D82F81AF5501100F4492A /* jsStringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsStringTests.swift; sourceTree = "<group>"; };
 		3B2D82FA1AF7D12100F4492A /* jsDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsDictionary.swift; sourceTree = "<group>"; };
+		3BCC97691AF932FE000DADA5 /* jsBoolean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = jsBoolean.swift; path = jsSwift/jsBoolean.swift; sourceTree = SOURCE_ROOT; };
 		3BECC5A41AF7D97900C4B795 /* jsDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsDate.swift; sourceTree = "<group>"; };
 		3BECC5A81AF7DF0000C4B795 /* jsDictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsDictionaryTests.swift; sourceTree = "<group>"; };
 		3BECC5AA1AF7E0C200C4B795 /* jsDateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = jsDateTests.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				3B2D82FA1AF7D12100F4492A /* jsDictionary.swift */,
 				3BECC5A41AF7D97900C4B795 /* jsDate.swift */,
 				3B2D82D31AF549F500F4492A /* jsSwift.h */,
+				3BCC97691AF932FE000DADA5 /* jsBoolean.swift */,
 				3B2D82D11AF549F500F4492A /* Supporting Files */,
 			);
 			path = jsSwift;
@@ -237,6 +240,7 @@
 				3B2D82FB1AF7D12100F4492A /* jsDictionary.swift in Sources */,
 				3B2D82F01AF54A2800F4492A /* jsArray.swift in Sources */,
 				3BECC5A51AF7D97900C4B795 /* jsDate.swift in Sources */,
+				3BCC976A1AF932FE000DADA5 /* jsBoolean.swift in Sources */,
 				3B2D82F11AF54A2800F4492A /* jsString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
