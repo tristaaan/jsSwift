@@ -13,6 +13,10 @@ extension Dictionary {
         return self.keys.array
     }
     
+    func hasOwnProperty(prop:Key) -> Bool {
+        return self[prop] != nil
+    }
+    
     func toString() -> String {
         return self.description
     }

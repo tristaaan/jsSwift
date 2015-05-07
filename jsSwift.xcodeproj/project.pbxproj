@@ -98,8 +98,8 @@
 				3B2D82EF1AF54A2800F4492A /* jsString.swift */,
 				3B2D82FA1AF7D12100F4492A /* jsDictionary.swift */,
 				3BECC5A41AF7D97900C4B795 /* jsDate.swift */,
-				3B2D82D31AF549F500F4492A /* jsSwift.h */,
 				3BCC97691AF932FE000DADA5 /* jsBoolean.swift */,
+				3B2D82D31AF549F500F4492A /* jsSwift.h */,
 				3B2D82D11AF549F500F4492A /* Supporting Files */,
 			);
 			path = jsSwift;

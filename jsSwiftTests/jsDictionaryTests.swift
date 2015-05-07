@@ -25,6 +25,12 @@ class jsDictionaryTests: XCTestCase {
         XCTAssertEqual(keysOut, ["a", "b"], "Dictionary.keys() did not come out right")
     }
     
+    func testHasOwnProperty() {
+        let dict:Dictionary<String,Int> = ["a":1, "b":2]
+        XCTAssert(dict.hasOwnProperty("b"), "dict does not have property b")
+        XCTAssertFalse(dict.hasOwnProperty("c"), "dict has property c?")
+    }
+    
     func testToString() {
         let dict:Dictionary<String,Int> = ["a":1, "b":2]
         XCTAssertEqual(dict.toString(), "\(dict)", "Dictionary not converted toString")
