@@ -17,6 +17,12 @@ func parseInt(var str:String, radix:Int=10) -> Int? {
         str = str.substringFromIndex(str.startIndex.successor())
     }
     
+    //check for 0x prefix
+    if str.hasPrefix("0x") {
+        let newStart:String.Index = advance(str.startIndex, 2)
+        str = str.substringFromIndex(newStart)
+    }
+    
     var out:Int = 0
     // basic base-10 toInt(), nil if not
     if radix == 10 {
