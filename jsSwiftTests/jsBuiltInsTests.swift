@@ -26,5 +26,6 @@ class jsBuiltInsTests: XCTestCase {
         XCTAssert(parseInt("f0c", radix: 100) == nil, "should not work with radixes > 36")
         XCTAssert(parseInt("10", radix: 0) == nil, "should not work radixes <= 0")
         XCTAssert(parseInt("10", radix: -2) == nil, "should not work radixes <= 0")
+        XCTAssert(parseInt("-1011", radix: 2) == -11, "should not work negative numbers")
     }
 }
