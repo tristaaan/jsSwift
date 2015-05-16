@@ -61,7 +61,7 @@ extension String {
             return nil
         }
         let index:String.Index = advance(self.startIndex, loc)
-        return self[index]
+        return self[index] //this may look like charAt calls the subscript below but index is a String.Index here
     }
     
     subscript(i:Int) -> Character? {
