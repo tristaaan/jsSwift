@@ -8,7 +8,7 @@
 
 import Foundation
 
-func parseInt(var str:String, radix:Int=10) -> Int? {
+func parseInt(var str:String, radix:Int = 10) -> Int? {
     str = str.lowercaseString
     
     //check for negative sign, if it's there str = substring(1,str.length)
@@ -24,11 +24,12 @@ func parseInt(var str:String, radix:Int=10) -> Int? {
     }
     
     var out:Int = 0
-    // basic base-10 toInt(), nil if not
+    // basic base-10 toInt()
     if radix == 10 {
         if let ret:Int = str.toInt() {
             return ret
         }
+        // return nil if not toInt-able
         else {
             return nil
         }
@@ -66,7 +67,7 @@ func parseInt(var str:String, radix:Int=10) -> Int? {
             if let digit:Int = String(char).toInt() {
                 out += Int(
                     Double(digit) *
-                        pow(Double(radix), Double(j))
+                    pow(Double(radix), Double(j))
                 )
                 j += 1
             }
