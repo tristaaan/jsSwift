@@ -18,7 +18,7 @@ func parseInt(var str:String, radix:Int = 10) -> Int? {
     }
     
     //check for 0x prefix
-    if str.hasPrefix("0x") {
+    while str.hasPrefix("0x") {
         let newStart:String.Index = advance(str.startIndex, 2)
         str = str.substringFromIndex(newStart)
     }

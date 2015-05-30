@@ -31,5 +31,6 @@ class jsBuiltInsTests: XCTestCase {
         XCTAssert(parseInt("0x1001", radix: 2) == 9, "should work with 0x prefix")
         XCTAssert(parseInt("-0x1001", radix: 2) == -9, "should work with negative sign and 0x prefix")
         XCTAssert(parseInt("0x-a0f") == nil, "should be nil, bad format")
+        XCTAssert(parseInt("0x0x16") == 16, "should support redundant 0x's")
     }
 }
