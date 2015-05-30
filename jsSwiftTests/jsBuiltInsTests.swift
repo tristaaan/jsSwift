@@ -33,4 +33,16 @@ class jsBuiltInsTests: XCTestCase {
         XCTAssert(parseInt("0x-a0f") == nil, "should be nil, bad format")
         XCTAssert(parseInt("0x0x16") == 16, "should support redundant 0x's")
     }
+    
+    func testParseFloat() {
+        XCTAssert(parseFloat("3.14") == 3.14, "should parse strings to floats")
+        XCTAssert(parseFloat("3.14f") == 3.14, "should parse strings with trailing alphanumerics")
+        XCTAssert(parseFloat("f3.14") == 0, "should not parse strings with alphanumeric prefixes")
+    }
+    
+    func testParseDouble() {
+        XCTAssert(parseDouble("3.14") == 3.14, "should parse strings to doubles")
+        XCTAssert(parseDouble("3.14f") == 3.14, "should parse strings with trailing alphanumerics")
+        XCTAssert(parseDouble("f3.14") == 0, "should not parse strings with alphanumeric prefixes")
+    }
 }

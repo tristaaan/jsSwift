@@ -105,3 +105,11 @@ func parseInt(var str:String, radix:Int = 10) -> Int? {
     
     return out
 }
+
+func parseFloat(var str:String) -> Float? {
+    return (str as NSString).floatValue
+}
+
+func parseDouble(var str:String) -> Double {
+    return (str as NSString).doubleValue
+}
