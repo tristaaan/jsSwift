@@ -8,25 +8,25 @@
 
 import Foundation
 
-func parseInt(var str:String, radix:Int = 10) -> Int? {
-    str = str.lowercaseString
+func parseInt(_ str:String, radix:Int = 10) -> Int? {
+    var str:String = str.lowercased()
     
     //check for negative sign, if it's there str = substring(1,str.length)
     let negative:Bool = str.hasPrefix("-")
     if negative {
-        str = str.substringFromIndex(str.startIndex.successor())
+        str = str.substring(from: str.characters.index(after: str.startIndex))
     }
     
-    //check for 0x prefix
-    while str.hasPrefix("0x") {
-        let newStart:String.Index = advance(str.startIndex, 2)
-        str = str.substringFromIndex(newStart)
-    }
-    
+//    //check for 0x prefix
+//    while str.hasPrefix("0x") {
+//        let ind:String.Index = str.index(str.startInde, offsetBy: 2)
+//        str = str.substring(from: ind)
+//    }
+//    
     var out:Int = 0
     // basic base-10 toInt()
     if radix == 10 {
-        if let ret:Int = str.toInt() {
+        if let ret:Int = Int(str) {
             return ret
         }
         // return nil if not toInt-able
@@ -42,9 +42,9 @@ func parseInt(var str:String, radix:Int = 10) -> Int? {
     else if radix < 10 && radix > 0 {
         // iterate through the characters in reverse, increment j every time
         var j:Int = 0
-        for char:Character in lazy(str).reverse() {
+        for char:Character in str.characters.reversed() {
             // is character toInt-able?
-            if let digit:Int = String(char).toInt() {
+            if let digit:Int = Int(String(char)) {
                 // out += digit * radix ^ j, a lot of conversions needed here
                 out += Int(
                     Double(digit) *
@@ -63,8 +63,8 @@ func parseInt(var str:String, radix:Int = 10) -> Int? {
         // once again we iterate through the string in reverse ...
         let alphabet:String = "abcdefghijklmnopqrstuvwxyz"
         var j:Int = 0
-        for char:Character in lazy(str).reverse() {
-            if let digit:Int = String(char).toInt() {
+        for char:Character in str.characters.reversed() {
+            if let digit:Int = Int(String(char)) {
                 out += Int(
                     Double(digit) *
                     pow(Double(radix), Double(j))
@@ -74,18 +74,21 @@ func parseInt(var str:String, radix:Int = 10) -> Int? {
             // but now, if the character is not toInt-able, see if it's in the alphabet
             // if it's in the alphabet, get the index of it and: out += digit * radix ^ index
             else {
-                if let strRange:Range<String.Index> = alphabet.rangeOfString(String(char),
-                    range:Range<String.Index>(start: alphabet.startIndex, end:alphabet.endIndex)
-                    ) {
-                        var index:Int = 10
-                        for var i:String.Index = alphabet.startIndex; i != strRange.startIndex; i = i.successor() {
-                            index += 1
-                        }
-                        out += Int(
-                            Double(index) *
-                            pow(Double(radix), Double(j))
-                        )
-                        j += 1
+                let fullRange = str.startIndex ..< str.endIndex
+                if let strRange:Range<String.Index> = alphabet.range(of: String(char),
+                                                                     options: [],
+                                                                     range:fullRange, locale: nil) {
+                    var index:Int = 10
+                    var i:String.Index = alphabet.startIndex
+                    while i != strRange.lowerBound {
+                        index += 1;
+                        i = str.index(i, offsetBy: 1)
+                    }
+                    out += Int(
+                        Double(index) *
+                        pow(Double(radix), Double(j))
+                    )
+                    j += 1
                 }
                 // if not in the alphabet return nil
                 else {
@@ -106,10 +109,12 @@ func parseInt(var str:String, radix:Int = 10) -> Int? {
     return out
 }
 
-func parseFloat(var str:String) -> Float? {
+func parseFloat(_ str:String) -> Float? {
+    let str = str
     return (str as NSString).floatValue
 }
 
-func parseDouble(var str:String) -> Double {
+func parseDouble(_ str:String) -> Double {
+    let str = str
     return (str as NSString).doubleValue
 }

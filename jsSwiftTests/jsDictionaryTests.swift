@@ -21,7 +21,7 @@ class jsDictionaryTests: XCTestCase {
     
     func testKeys() {
         let dict:Dictionary<String,Int> = ["a":1, "b":2]
-        let keysOut = sorted(dict.keys(), <)
+        let keysOut = dict.keys.sorted()
         XCTAssertEqual(keysOut, ["a", "b"], "Dictionary.keys() did not come out right")
     }
     

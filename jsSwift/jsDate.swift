@@ -8,10 +8,10 @@
 
 import Foundation
 
-extension NSDate {
+extension Date {
     
-    convenience init(year:Int, month:Int, day:Int=0, hour:Int=0, minute:Int=0, seconds:Int=0) {
-        let comp:NSDateComponents = NSDateComponents()
+    init(year:Int, month:Int, day:Int=0, hour:Int=0, minute:Int=0, seconds:Int=0) {
+        var comp:DateComponents = DateComponents()
         comp.year  = year
         comp.month = month
         comp.day   = day
@@ -19,60 +19,52 @@ extension NSDate {
         comp.minute = minute
         comp.second = seconds
         
-        let cal:NSCalendar = NSCalendar.currentCalendar();
-        self.init(timeInterval:0, sinceDate:cal.dateFromComponents(comp)!)
+        self = Date.init(timeInterval: 0, since: comp.date!)
     }
     
-    internal func localeCal() -> NSCalendar {
-        let cal:NSCalendar = NSCalendar.currentCalendar();
+    internal func localeCal() -> Calendar {
+        let cal:Calendar = Calendar.current;
         return cal
     }
     
     //MARK: Getters
-    func now() -> Double {
+    static func now() -> Double {
         return NSTimeIntervalSince1970
     }
     
     func getSeconds() -> Int {
-        let comp:NSDateComponents = self.localeCal().components(NSCalendarUnit.CalendarUnitSecond, fromDate: self)
-        return comp.second
+        return Calendar.current.component(.second, from: self)
     }
     
     func getMinutes() -> Int {
-        let comp:NSDateComponents = self.localeCal().components(NSCalendarUnit.CalendarUnitMinute, fromDate: self)
-        return comp.minute
+        return Calendar.current.component(.minute, from: self)
     }
     
     func getHours() -> Int {
-        let comp:NSDateComponents = self.localeCal().components(NSCalendarUnit.CalendarUnitHour, fromDate: self)
-        return comp.hour
+        return Calendar.current.component(.hour, from: self)
     }
     
     func getDate() -> Int {
-        let comp:NSDateComponents = self.localeCal().components(NSCalendarUnit.CalendarUnitDay, fromDate: self)
-        return comp.day
+        return Calendar.current.component(.day, from: self)
     }
     
     func getDay() -> Int {
-        let comp:NSDateComponents = self.localeCal().components(NSCalendarUnit.CalendarUnitWeekday, fromDate: self)
-        return comp.weekday
+        return Calendar.current.component(.weekday, from: self)
     }
     
     func getMonth() -> Int {
-        let comp:NSDateComponents = self.localeCal().components(NSCalendarUnit.CalendarUnitMonth, fromDate: self)
-        return comp.month
+        return Calendar.current.component(.month, from: self)
     }
     
     func getFullYear() -> Int {
-        let comp:NSDateComponents = self.localeCal().components(NSCalendarUnit.CalendarUnitYear, fromDate: self)
-        return comp.year
+        return Calendar.current.component(.year, from: self)
     }
     
     //MARK: Setters
     
     //MARK: Conversion Getters
     func toLocaleString() -> String {
-        return self.descriptionWithLocale(NSLocale.currentLocale())!
+        return self.description(with: Locale.current)
     }
     
     func toString() -> String {
@@ -80,16 +72,16 @@ extension NSDate {
     }
     
     func toDateString() -> String {
-        let formatter = NSDateFormatter()
-        formatter.dateStyle = .FullStyle
-        formatter.timeStyle = .NoStyle
-        return formatter.stringFromDate(self)
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        formatter.timeStyle = .none
+        return formatter.string(from: self)
     }
     
     func toTimeString() -> String {
-        let formatter = NSDateFormatter()
-        formatter.dateStyle = .NoStyle
-        formatter.timeStyle = .LongStyle
-        return formatter.stringFromDate(self)
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .long
+        return formatter.string(from: self)
     }
 }

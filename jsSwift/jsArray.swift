@@ -1,7 +1,7 @@
 extension Array {
     var length:Int {get { return self.count }}
 
-    func every(fn: (T)->Bool) -> Bool {
+    func every(_ fn:(Element)->Bool) -> Bool {
         var out = true
         for i in self {
             out = out && fn(i);
@@ -9,7 +9,7 @@ extension Array {
         return out
     }
     
-    func some(fn: (T) -> Bool) -> Bool {
+    func some(_ fn:(Element) -> Bool) -> Bool {
         var out = false
         for i in self {
             out = out || fn(i);
@@ -21,16 +21,20 @@ extension Array {
         return self.description
     }
     
-    func concat(arr:Array<T>) -> Array<T> {
+    func concat(_ arr:Array<Element>) -> Array<Element> {
         return self + arr
     }
     
-    mutating func push(el:T) -> Int {
+    func indexOf(_ searchElement:Element) -> Int? {
+        return -1
+    }
+    
+    mutating func push(_ el:Element) -> Int {
         self.append(el)
         return self.count
     }
     
-    mutating func pop() -> T? {
+    mutating func pop() -> Element? {
         if self.count == 0 {
             return nil
         }
@@ -39,17 +43,17 @@ extension Array {
         return out
     }
     
-    mutating func unshift(el:T) -> Int {
-        self.insert(el, atIndex: 0)
+    mutating func unshift(_ el:Element) -> Int {
+        self.insert(el, at: 0)
         return self.count
     }
     
-    mutating func shift() -> T? {
+    mutating func shift() -> Element? {
         if self.count == 0 {
             return nil
         }
         let out = self[0]
-        self.removeAtIndex(0)
+        self.remove(at: 0)
         return out
     }
 }

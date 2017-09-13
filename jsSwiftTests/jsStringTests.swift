@@ -62,8 +62,8 @@ class jsStringTests: XCTestCase {
         XCTAssert(str.charAt(0) == Character("l"), "wrong character grabbed with charAt(int)")
         XCTAssert(str[0] == Character("l"), "wrong character grabbed with str[int]")
         
-        XCTAssert(str.charAt(count(str)-1) == Character("y"), "wrong character grabbed with str.charAt(str.length-1)")
-        XCTAssert(str[count(str)-1] == Character("y"), "wrong character grabbed with str[str.length-1]")
+        XCTAssert(str.charAt(str.characters.count-1) == Character("y"), "wrong character grabbed with str.charAt(str.length-1)")
+        XCTAssert(str[str.characters.count-1] == Character("y"), "wrong character grabbed with str[str.length-1]")
         
         XCTAssert(str.charAt(-1) == nil, "wrong character grabbed with charAt(-1)")
         XCTAssert(str[-1] == nil, "wrong character grabbed with str[-1]")
@@ -74,11 +74,11 @@ class jsStringTests: XCTestCase {
     
     func testToUpperCase() {
         let str:String = "freedom"
-        XCTAssert(str.toUpperCase() == str.uppercaseString, "uppercase is wrong: \(str) -> \(str.toUpperCase())")
+        XCTAssert(str.toUpperCase() == str.uppercased(), "uppercase is wrong: \(str) -> \(str.toUpperCase())")
     }
     
     func testToLowerCase() {
         let str:String = "BRAVERY"
-        XCTAssert(str.toLowerCase() == str.lowercaseString, "lowercase is wrong: \(str) -> \(str.toLowerCase())")
+        XCTAssert(str.toLowerCase() == str.lowercased(), "lowercase is wrong: \(str) -> \(str.toLowerCase())")
     }
 }

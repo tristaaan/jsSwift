@@ -11,7 +11,7 @@ import Foundation
 extension Bool {
     
     init(str:String) {
-        self.init(count(str) != 0)
+        self.init(str.length != 0)
     }
     
     init(int:Int) {

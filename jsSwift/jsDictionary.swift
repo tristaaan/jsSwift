@@ -10,10 +10,10 @@ import Foundation
 
 extension Dictionary {
     func keys() -> Array<Key> {
-        return self.keys.array
+        return Array(self.keys)
     }
     
-    func hasOwnProperty(prop:Key) -> Bool {
+    func hasOwnProperty(_ prop:Key) -> Bool {
         return self[prop] != nil
     }
     

@@ -20,11 +20,11 @@ class jsDateTests: XCTestCase {
     }
     
     func testNow() {
-        XCTAssert(NSDate(year:1970, month:1).now() == NSTimeIntervalSince1970, "incorrect time since 1970")
+        XCTAssert(Date.now() == NSTimeIntervalSince1970, "incorrect time since 1970")
     }
     
     func testGetters() {
-        let date:NSDate = NSDate(year: 2007, month: 1, day: 8, hour: 9, minute: 43, seconds: 24)
+        let date:Date = Date(year: 2007, month: 1, day: 8, hour: 9, minute: 43, seconds: 24)
         XCTAssert(date.getFullYear()  == 2007, "year getter wrong: \(date.getFullYear())")
         XCTAssert(date.getMonth() == 1,    "month getter wrong: \(date.getMonth())")
         XCTAssert(date.getDate()   == 8,   "date getter wrong: \(date.getDate())")
@@ -35,17 +35,17 @@ class jsDateTests: XCTestCase {
     }
     
     func testToString(){
-        let date:NSDate = NSDate(year: 1984, month: 1, day: 24, hour: 0, minute: 0, seconds: 0)
+        let date:Date = Date(year: 1984, month: 1, day: 24, hour: 0, minute: 0, seconds: 0)
         XCTAssert(date.toString() == date.description,    "toString")
     }
     
     func testToDateString() {
-        let date:NSDate = NSDate(year: 2014, month: 6, day: 2, hour: 11, minute: 45, seconds: 0)
+        let date:Date = Date(year: 2014, month: 6, day: 2, hour: 11, minute: 45, seconds: 0)
         XCTAssert(date.toDateString() == "Monday, June 2, 2014", "Date string wrong")
     }
     
     func testToTimeString() {
-        let date:NSDate = NSDate(year: 2014, month: 6, day: 2, hour: 11, minute: 45, seconds: 0)
+        let date:Date = Date(year: 2014, month: 6, day: 2, hour: 11, minute: 45, seconds: 0)
         XCTAssert(date.toTimeString() == "11:45:00 AM MDT", "Time string wrong")
     }
 }
