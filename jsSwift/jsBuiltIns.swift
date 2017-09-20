@@ -14,15 +14,14 @@ func parseInt(_ str:String, radix:Int = 10) -> Int? {
     //check for negative sign, if it's there str = substring(1,str.length)
     let negative:Bool = str.hasPrefix("-")
     if negative {
-        str = str.substring(from: str.characters.index(after: str.startIndex))
+        str = String(str[str.characters.index(after: str.startIndex)..<str.endIndex])
     }
     
 //    //check for 0x prefix
-//    while str.hasPrefix("0x") {
-//        let ind:String.Index = str.index(str.startInde, offsetBy: 2)
-//        str = str.substring(from: ind)
-//    }
-//    
+    while str.hasPrefix("0x") {
+        str = String(str[str.index(str.startIndex, offsetBy:2)..<str.endIndex])
+    }
+
     var out:Int = 0
     // basic base-10 toInt()
     if radix == 10 {
@@ -64,6 +63,7 @@ func parseInt(_ str:String, radix:Int = 10) -> Int? {
         let alphabet:String = "abcdefghijklmnopqrstuvwxyz"
         var j:Int = 0
         for char:Character in str.characters.reversed() {
+            // Plain digit.
             if let digit:Int = Int(String(char)) {
                 out += Int(
                     Double(digit) *
@@ -74,7 +74,7 @@ func parseInt(_ str:String, radix:Int = 10) -> Int? {
             // but now, if the character is not toInt-able, see if it's in the alphabet
             // if it's in the alphabet, get the index of it and: out += digit * radix ^ index
             else {
-                let fullRange = str.startIndex ..< str.endIndex
+                let fullRange = alphabet.startIndex ..< alphabet.endIndex
                 if let strRange:Range<String.Index> = alphabet.range(of: String(char),
                                                                      options: [],
                                                                      range:fullRange, locale: nil) {
@@ -82,7 +82,7 @@ func parseInt(_ str:String, radix:Int = 10) -> Int? {
                     var i:String.Index = alphabet.startIndex
                     while i != strRange.lowerBound {
                         index += 1;
-                        i = str.index(i, offsetBy: 1)
+                        i = alphabet.index(i, offsetBy: 1)
                     }
                     out += Int(
                         Double(index) *

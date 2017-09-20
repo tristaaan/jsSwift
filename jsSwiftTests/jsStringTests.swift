@@ -25,8 +25,8 @@ class jsStringTests: XCTestCase {
     
     func testSubstring() {
         let str:String = "hello"
-        XCTAssert(str.substr(0) == "hello", "fails with 1 argument")
-        XCTAssert(str.substring(2) == "llo", "fails with 1 argument")
+        XCTAssert(str.substr(0) == "hello", "fails with 1 argument: \(str.substr(0))")
+        XCTAssert(str.substring(2) == "llo", "fails with 1 argument: \(str.substring(2))")
         
         XCTAssert(str.substr(0, end: 2) == "he", "expected \"he\" got \(str.substr(0,end: 2))")
         XCTAssert(str.substring(0, end: 2) == "he", "expected \"he\" got \(str.substring(0, end:2))")

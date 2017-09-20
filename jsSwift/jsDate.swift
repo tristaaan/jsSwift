@@ -19,7 +19,7 @@ extension Date {
         comp.minute = minute
         comp.second = seconds
         
-        self = Date.init(timeInterval: 0, since: comp.date!)
+        self.init(timeInterval: 0, since: comp.date!)
     }
     
     internal func localeCal() -> Calendar {

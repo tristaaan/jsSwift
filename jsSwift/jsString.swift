@@ -16,9 +16,8 @@ extension String {
         }
         
         let startIndex:String.Index = self.index(self.startIndex, offsetBy: start)
-        let endIndex:String.Index = self.index(self.endIndex, offsetBy: -end)
-        let range:Range<String.Index> = (startIndex ..< endIndex)
-        return self.substring(with: range)
+        let endIndex:String.Index = self.index(self.startIndex, offsetBy: end)
+        return String(self[startIndex..<endIndex])
     }
     
     func substr(_ start:Int, end:Int = -1) -> String {

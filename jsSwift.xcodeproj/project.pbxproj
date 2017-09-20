@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B14215C1F72C7930004DBF3 /* jsDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BECC5AA1AF7E0C200C4B795 /* jsDateTests.swift */; };
 		3B2D82D41AF549F500F4492A /* jsSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B2D82D31AF549F500F4492A /* jsSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B2D82E11AF549F500F4492A /* jsArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D82E01AF549F500F4492A /* jsArrayTests.swift */; };
 		3B2D82F01AF54A2800F4492A /* jsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D82EE1AF54A2800F4492A /* jsArray.swift */; };
@@ -26,7 +27,6 @@
 		3BECC5A61AF7DEE200C4B795 /* jsDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D82FA1AF7D12100F4492A /* jsDictionary.swift */; };
 		3BECC5A71AF7DEE400C4B795 /* jsDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BECC5A41AF7D97900C4B795 /* jsDate.swift */; };
 		3BECC5A91AF7DF0000C4B795 /* jsDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BECC5A81AF7DF0000C4B795 /* jsDictionaryTests.swift */; };
-		3BECC5AB1AF7E0C200C4B795 /* jsDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BECC5AA1AF7E0C200C4B795 /* jsDateTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,16 +197,16 @@
 		3B2D82C51AF549F500F4492A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = thesixsides;
 				TargetAttributes = {
 					3B2D82CD1AF549F500F4492A = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0900;
 					};
 					3B2D82D81AF549F500F4492A = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0900;
 					};
 				};
 			};
@@ -266,7 +266,6 @@
 				3BECC5A91AF7DF0000C4B795 /* jsDictionaryTests.swift in Sources */,
 				3BECC5A71AF7DEE400C4B795 /* jsDate.swift in Sources */,
 				3B99398A1B07D80C00E2C94C /* jsBuiltIns.swift in Sources */,
-				3BECC5AB1AF7E0C200C4B795 /* jsDateTests.swift in Sources */,
 				3BCC97761AFAA8E7000DADA5 /* jsBoolean.swift in Sources */,
 				3B2D82F31AF54F7D00F4492A /* jsArray.swift in Sources */,
 				3BCC97751AFAA84C000DADA5 /* jsBooleanTests.swift in Sources */,
@@ -274,6 +273,7 @@
 				3B9939891B07D80800E2C94C /* jsBuiltInsTests.swift in Sources */,
 				3B2D82F91AF5501100F4492A /* jsStringTests.swift in Sources */,
 				3B2D82E11AF549F500F4492A /* jsArrayTests.swift in Sources */,
+				3B14215C1F72C7930004DBF3 /* jsDateTests.swift in Sources */,
 				3B2D82F71AF54FD200F4492A /* jsString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,14 +297,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -348,14 +354,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -398,7 +410,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thesixsides.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -416,7 +429,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thesixsides.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -435,7 +449,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thesixsides.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -450,7 +465,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thesixsides.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
