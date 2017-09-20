@@ -18,8 +18,9 @@ extension Date {
         comp.hour  = hour
         comp.minute = minute
         comp.second = seconds
+        let cal = Calendar.current
         
-        self.init(timeInterval: 0, since: comp.date!)
+        self.init(timeInterval: 0, since: cal.date(from: comp)!)
     }
     
     internal func localeCal() -> Calendar {

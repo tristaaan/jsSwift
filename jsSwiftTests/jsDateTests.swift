@@ -46,6 +46,6 @@ class jsDateTests: XCTestCase {
     
     func testToTimeString() {
         let date:Date = Date(year: 2014, month: 6, day: 2, hour: 11, minute: 45, seconds: 0)
-        XCTAssert(date.toTimeString() == "11:45:00 AM MDT", "Time string wrong")
+        XCTAssert(date.toTimeString().components(separatedBy: CharacterSet.whitespaces)[0] == "11:45:00", "Time string wrong")
     }
 }
