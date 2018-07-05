@@ -62,8 +62,8 @@ class jsStringTests: XCTestCase {
         XCTAssert(str.charAt(0) == Character("l"), "wrong character grabbed with charAt(int)")
         XCTAssert(str[0] == Character("l"), "wrong character grabbed with str[int]")
         
-        XCTAssert(str.charAt(str.characters.count-1) == Character("y"), "wrong character grabbed with str.charAt(str.length-1)")
-        XCTAssert(str[str.characters.count-1] == Character("y"), "wrong character grabbed with str[str.length-1]")
+        XCTAssert(str.charAt(str.count-1) == Character("y"), "wrong character grabbed with str.charAt(str.length-1)")
+        XCTAssert(str[str.count-1] == Character("y"), "wrong character grabbed with str[str.length-1]")
         
         XCTAssert(str.charAt(-1) == nil, "wrong character grabbed with charAt(-1)")
         XCTAssert(str[-1] == nil, "wrong character grabbed with str[-1]")

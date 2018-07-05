@@ -1,7 +1,7 @@
 import Foundation
 
 extension String {
-    var length:Int {get { return self.characters.count }}
+    var length:Int {get { return self.count }}
 
     func substring(_ start:Int, end:Int = -1) -> String {
         var end = end

@@ -14,10 +14,10 @@ func parseInt(_ str:String, radix:Int = 10) -> Int? {
     //check for negative sign, if it's there str = substring(1,str.length)
     let negative:Bool = str.hasPrefix("-")
     if negative {
-        str = String(str[str.characters.index(after: str.startIndex)..<str.endIndex])
+        str = String(str[str.index(after: str.startIndex)..<str.endIndex])
     }
     
-//    //check for 0x prefix
+    //check for 0x prefix
     while str.hasPrefix("0x") {
         str = String(str[str.index(str.startIndex, offsetBy:2)..<str.endIndex])
     }
@@ -41,7 +41,7 @@ func parseInt(_ str:String, radix:Int = 10) -> Int? {
     else if radix < 10 && radix > 0 {
         // iterate through the characters in reverse, increment j every time
         var j:Int = 0
-        for char:Character in str.characters.reversed() {
+        for char:Character in str.reversed() {
             // is character toInt-able?
             if let digit:Int = Int(String(char)) {
                 // out += digit * radix ^ j, a lot of conversions needed here
@@ -62,7 +62,7 @@ func parseInt(_ str:String, radix:Int = 10) -> Int? {
         // once again we iterate through the string in reverse ...
         let alphabet:String = "abcdefghijklmnopqrstuvwxyz"
         var j:Int = 0
-        for char:Character in str.characters.reversed() {
+        for char:Character in str.reversed() {
             // Plain digit.
             if let digit:Int = Int(String(char)) {
                 out += Int(
